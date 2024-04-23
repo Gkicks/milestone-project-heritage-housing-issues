@@ -13,6 +13,12 @@ def page_sale_price_study_body():
     # load data
     df = load_housing_data()
 
+    # change the object type data to numerical data
+    df['BsmtExposure'] = df['BsmtExposure'].replace({'None':0, 'No':1, 'Mn':2, 'Av':3, 'Gd':4})
+    df['BsmtFinType1'] = df['BsmtFinType1'].replace({'None':0, 'Unf':1, 'LwQ':2, 'BLQ':3, 'Rec':4, 'ALQ':5, 'GLQ':6})
+    df['GarageFinish'] = df['GarageFinish'].replace({'None':0, 'Unf':1, 'RFn':2, 'Fin':3})
+    df['KitchenQual'] = df['KitchenQual'].replace({'Po':0, 'Fa':1, 'TA':2, 'Gd':3, 'Ex':4})
+
     st.write("### House Price Study")
     st.info(
         # taken from the business requirements
@@ -56,60 +62,12 @@ def page_sale_price_study_body():
 
     # Individual plots per variable
     if st.checkbox("Sale Price Levels per Variable"):
-        sales_to_variable_scatter(df_eda)
+        plot_scatter(df_eda, vars_to_study, 'SalePrice')
 
-
-def sales_to_variable_scatter(df_eda):
-    # target_var = 'SalePrice'
-    for col in df_eda.drop([target_var], axis=1).columns.to_list():
-        ax = sns.regplot(data=df, x=col, y="SalePrice", scatter_kws={"color": "blue"}, line_kws={"color": "red"})
-        plt.ylabel('SalePrice')
-        plt.xlabel(col)
+# plots each variable in a scatter chart, against the target variable
+def plot_scatter(df, col, target_var):
+    for col in df.drop([target_var], axis=1).columns.to_list():
+        fig, axes = plt.subplots(figsize=(8, 5))
+        sns.regplot(data=df, x=col, y=target_var, scatter_kws={"color": "blue"}, line_kws={"color": "red"})
         plt.title(f"{col}", fontsize=20, y=1.1)
-        plt.show()
-
-
-# code copied from "02 - Churned Customer Study" notebook - "Variables Distribution by Churn" section
-# def plot_categorical(df, col, target_var):
-    # fig, axes = plt.subplots(figsize=(12, 5))
-    # sns.countplot(data=df, x=col, hue=target_var,
-                #   order=df[col].value_counts().index)
-    # plt.xticks(rotation=90)
-    # plt.title(f"{col}", fontsize=20, y=1.05)
-    # st.pyplot(fig)  # st.pyplot() renders image, in notebook is plt.show()
-
-
-# code copied from "02 - Churned Customer Study" notebook - "Variables Distribution by Churn" section
-# def plot_numerical(df, col, target_var):
-    # fig, axes = plt.subplots(figsize=(8, 5))
-    # sns.histplot(data=df, x=col, hue=target_var, kde=True, element="step")
-    # plt.title(f"{col}", fontsize=20, y=1.05)
-    # st.pyplot(fig)  # st.pyplot() renders image, in notebook is plt.show()
-
-
-# function created using "02 - Churned Customer Study" notebook code - Parallel Plot section
-# def parallel_plot_churn(df_eda):
-
-    # hard coded from "disc.binner_dict_['tenure']"" result,
-    # tenure_map = [-np.Inf, 6, 12, 18, 24, np.Inf]
-    # found at "02 - Churned Customer Study" notebook
-    # under "Parallel Plot" section
-    # disc = ArbitraryDiscretiser(binning_dict={'tenure': tenure_map})
-    # df_parallel = disc.fit_transform(df_eda)
-
-    # n_classes = len(tenure_map) - 1
-    # classes_ranges = disc.binner_dict_['tenure'][1:-1]
-    # LabelsMap = {}
-    # for n in range(0, n_classes):
-        # if n == 0:
-            # LabelsMap[n] = f"<{classes_ranges[0]}"
-        # elif n == n_classes-1:
-            # LabelsMap[n] = f"+{classes_ranges[-1]}"
-        # else:
-            # LabelsMap[n] = f"{classes_ranges[n-1]} to {classes_ranges[n]}"
-
-    # df_parallel['tenure'] = df_parallel['tenure'].replace(LabelsMap)
-    # fig = px.parallel_categories(
-        # df_parallel, color="Churn", width=750, height=500)
-    # we use st.plotly_chart() to render, in notebook is fig.show()
-    # st.plotly_chart(fig)
+        st.pyplot(fig)  
