@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from src.data_management import load_housing_data, load_pkl_file
-from src.machine_learning.evaluate import performance, evaluation, evaluation_plots
+from src.machine_learning.evaluate import performance, evaluation
 
 
 def page_ml_predict_house_price_body():
