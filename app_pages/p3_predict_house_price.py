@@ -9,7 +9,7 @@ def page_predict_house_price_body():
     # load predict sale price files
     version = 'v1'
     sale_price_pipeline = load_pkl_file(
-        f"outputs/ml_pipeline/predict_sale_price/{version}/pipeline_clf.pkl")
+        f"outputs/ml_pipeline/predict_sale_price/{version}/pipeline.pkl")
     house_features = (pd.read_csv(f"outputs/ml_pipeline/predict_sale_price/{version}/X_train.csv")
                       .columns
                       .to_list()
