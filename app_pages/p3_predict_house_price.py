@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from src.data_management import load_housing_data, load_inherited_housing_data, load_pkl_file
-from src.machine_learning.predictive_analysis_ui import predict_sale_price
+from src.machine_learning.predictive_analysis_ui import predict_sale_price_single, predict_sale_price_inherited 
 
 
 def page_predict_house_price_body():
@@ -22,7 +22,20 @@ def page_predict_house_price_body():
         f"her 4 inherited houses, and any other house in Ames, Iowa."
     )
     st.write("---")
-    st.write("### Sale Price Prediction Interface")
+    st.write("## Sale Price Prediction Interface - Single Property")
+    st.text("")
+    st.warning(
+        f"* Above Ground Area, Total Basement Area and Garage Area are all "
+        f"measured in square feet\n"
+        f"* Overall Quality is measured from 1-10, with 1 being 'vey poor' "
+        f"to 10 being 'very excellent\n"
+        f"* Kitchen Quality is measured from 1-6, with 1 being 'poor' "
+        f"to 6 being 'excellent\n"
+        f"* Use the + and - buttons to increase / decrease the numbers or "
+        f"type over the number shown\n"
+        f"* Press 'Run Predictive Analysis' to shown the predicted house price "
+        f"based on the variables entered"
+    )
     st.text("")
 
     # Generate Live Data
@@ -31,22 +44,42 @@ def page_predict_house_price_body():
     # predict on live data
     st.text("")
     if st.button("Run Predictive Analysis"):
-        sale_price_prediction = predict_sale_price(
+        # st.write(f"### The predicted sale price for this property is:")
+        sale_price_prediction = predict_sale_price_single(
             X_live, house_features, sale_price_pipeline)
 
     st.write("---")
 
-    st.info(
-        f"* Price prediction of inherited houses "
-    )
+    # section for showing the inherited houses price prediction
+    st.write("## Sale Price Prediction Interface - Inherited Houses")
+    st.text("")
 
     inherited_df = load_inherited_housing_data()
 
+    # display inherited houses data
+    if st.checkbox("Inspect Inherited Housing Data"):
+        st.write(
+            f"* The dataset has {inherited_df.shape[0]} rows and {inherited_df.shape[1]} columns. \n")
+
+        st.write(inherited_df)
+
+    st.text("")
+
+    # p_1_price_prediction = predict_sale_price(inherited_df.iloc[[0]], house_features, sale_price_pipeline)
+    # p_2_price_prediction = predict_sale_price(inherited_df.iloc[[1]], house_features, sale_price_pipeline)
+    # p_3_price_prediction = predict_sale_price(inherited_df.iloc[[2]], house_features, sale_price_pipeline)
+    # p_4_price_prediction = predict_sale_price(inherited_df.iloc[[3]], house_features, sale_price_pipeline)
+
     # predict on inherited houses data
     if st.button("Run Predictive Analysis on Inherited Houses"):
-        inherited_sale_price_prediction = predict_sale_price(
+        st.write(
+            # f"* The predicted sale price of property 1 is {p_1_price_prediction:,}"
+            # f"* The predicted sale price of property 2 is {p_2_price_prediction:,}"
+            # f"* The predicted sale price of property 3 is {p_3_price_prediction:,}"
+            # f"* The predicted sale price of property 4 is {p_4_price_prediction:,}"
+            sale_price_prediction = predict_sale_price_inherited(
             inherited_df, house_features, sale_price_pipeline)
-
+        )
 
 def DrawInputsWidgets():
 

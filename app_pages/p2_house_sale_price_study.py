@@ -20,9 +20,11 @@ def page_sale_price_study_body():
     df['KitchenQual'] = df['KitchenQual'].replace({'Po':0, 'Fa':1, 'TA':2, 'Gd':3, 'Ex':4})
 
     st.write("### House Price Study")
+    st.text("")
     st.info(
         # taken from the business requirements
-        f"* The client is interested in discovering how the house attributes "
+        f"* Business requirement 1 - "
+        f"The client is interested in discovering how the house attributes "
         f"correlate with the sales prices. "
         f"Therefore, the client expects data visualizations "
         f"of the correlated variables against the sale price.")
@@ -48,7 +50,7 @@ def page_sale_price_study_body():
     )
 
     # Text from Juypter notebook 2_data_exploration, Conclusions section
-    st.info(
+    st.success(
         f"Overall quality has the higest impact on SalePrice. "
         f"It is indicated that: \n"
         f"* Kitchen quality also impacts SalePrice with higher quality getting "
