@@ -9,20 +9,10 @@ def predict_sale_price_single(X_live, house_features, sale_price_pipeline):
     # prediction
     sale_price_prediction = sale_price_pipeline.predict(X_live_sale_price)
 
-    # st.write(len(sale_price_prediction))
-
-    # if len(sale_price_prediction == 4):
-    # st.write("true")
-    # st.text("")
     st.write(f"### The predicted sale price for this property is:")
     st.text("")
     sale_price = int(sale_price_prediction)
     st.write(f"### ${sale_price:,}")
-    # else:
-        # for house in sale_price_prediction:
-            # st.write(
-                # f"{house} price is {int(sale_price_prediction)}")
-        # st.write(sale_price_prediction)
 
     return sale_price_prediction
 
@@ -37,7 +27,7 @@ def predict_sale_price_inherited(X_live, house_features, sale_price_pipeline):
     p_3 = X_live_sale_price.iloc[[2]]
     p_4 = X_live_sale_price.iloc[[3]]
 
-    # prediction
+    # prediction for each property
     sale_price_prediction = sale_price_pipeline.predict(X_live_sale_price)
     sale_price_prediction_p1 = sale_price_pipeline.predict(p_1)
     sale_price_prediction_p2 = sale_price_pipeline.predict(p_2)

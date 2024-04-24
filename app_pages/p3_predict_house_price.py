@@ -44,7 +44,6 @@ def page_predict_house_price_body():
     # predict on live data
     st.text("")
     if st.button("Run Predictive Analysis"):
-        # st.write(f"### The predicted sale price for this property is:")
         sale_price_prediction = predict_sale_price_single(
             X_live, house_features, sale_price_pipeline)
 
@@ -65,18 +64,9 @@ def page_predict_house_price_body():
 
     st.text("")
 
-    # p_1_price_prediction = predict_sale_price(inherited_df.iloc[[0]], house_features, sale_price_pipeline)
-    # p_2_price_prediction = predict_sale_price(inherited_df.iloc[[1]], house_features, sale_price_pipeline)
-    # p_3_price_prediction = predict_sale_price(inherited_df.iloc[[2]], house_features, sale_price_pipeline)
-    # p_4_price_prediction = predict_sale_price(inherited_df.iloc[[3]], house_features, sale_price_pipeline)
-
-    # predict on inherited houses data
+    # predict inherited houses data
     if st.button("Run Predictive Analysis on Inherited Houses"):
         st.write(
-            # f"* The predicted sale price of property 1 is {p_1_price_prediction:,}"
-            # f"* The predicted sale price of property 2 is {p_2_price_prediction:,}"
-            # f"* The predicted sale price of property 3 is {p_3_price_prediction:,}"
-            # f"* The predicted sale price of property 4 is {p_4_price_prediction:,}"
             sale_price_prediction = predict_sale_price_inherited(
             inherited_df, house_features, sale_price_pipeline)
         )
