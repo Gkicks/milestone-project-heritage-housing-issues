@@ -233,6 +233,26 @@ The technologies used for this project were:
 * xgboost==1.2.1
 * ydata-profiling==4.4.0
 
+## Testing
+
+### PEP8 Validation
+
+I ran my code, for all python files, through the PEP8 validator. There were some formatting errors raised:
+
+* E501 line too long (87 > 79 characters)
+* E231 missing whitespace after '
+* W293 blank line contains whitespace
+* W292 no newline at end of file
+* E302 expected 2 blank lines, found 1
+
+These issues have now all been resolved and each page passes this validation
+
+### Full Testing
+
+
+### User Stories
+
+
 ## Credits 
 
 * The code was based on the Code Institute Walkthough 2 - Churnometer project and adapted to fit the business requirements and data for this project
