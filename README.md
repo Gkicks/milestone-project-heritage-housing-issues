@@ -5,11 +5,13 @@ Further to this to app aims to predict the sale price of the four homes the clie
 
 Visit the deployed site here: [Heritage Housing](https://heritage-housing-739de1000c22.herokuapp.com/)
 
-![am-i-responsive](static/images/amiresponsive.png)
+![Am I Responsive Screenshot](static/images/amiresponsive.png)
+
 
 ## Contents
 
 - [Heritage Housing](#heritage-housing)
+
 
 ## Dataset Content  
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
@@ -42,6 +44,7 @@ Visit the deployed site here: [Heritage Housing](https://heritage-housing-739de1
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
+
 ## Business Requirements
 As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
@@ -49,6 +52,7 @@ Although your friend has an excellent understanding of property prices in her ow
 
 * Business Requirement 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
 * Business Requirement 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
 
 ## Hypothesis and how to validate?
 * We suspect that quality will have an impact on house price, with houses that have higher quality features fetching a higher sale price.
@@ -61,12 +65,14 @@ Although your friend has an excellent understanding of property prices in her ow
     * This will be determined though a correlation study
     * Correct. The correlation study show that both the year built and the year the garage was built have a high correlation with sale price however, during feature engineering, they were not found to be the features that were most important
 
+
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 * Conventional data analysis to investigate how house attributes are correlated with the sale prices
 * The data suggests a regressor where the target is the sale price
 * The inputs are house attribute information and the output is the predicted sale price
 * We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set
 * There are no privacy or ethical concerns
+
 
 ## ML Business Case
 
@@ -88,18 +94,107 @@ Although your friend has an excellent understanding of property prices in her ow
     * As a data analyst I was my app to be deployed so that my client can easily access this
     * As I client I want to be able to access the deployed app so I can run the predictions for the houses I would like to know the predicted price/s of
 
-## Dashboard Design
-* Page 1 - 
 
+## Dashboard Design
+
+### Page 1 - Project Summary
+
+* A summary of the project dataset
+* A link to the ReadMe file
+* Sets out the business requirements
+
+<details>
+<summary>Project Summary Page Screenshots</summary>
+![Project Summary Page Screenshot](static/images/project-summary.png)
+</details>
+
+### Page 2 - House Sale Price Study
+
+* Details business requirement 1
+* Has a button the user can click that will display the housing data
+* Shows the variables most correlated to sale price
+* Gives the conclusions that have been reached from the house sale price study
+* Has a button the user can click that will display graphs shows a scatterplot, for each variable, against sale price
+
+<details>
+<summary>House Sale Price Study Page Screenshots</summary>
+![House Price Study Page Screenshot](static/images/house-price-study.png)
+![Inspect Housing Data Screenshot](static/images/inspect-housing-data.png)
+![Scatterplots Screenshot](static/images/scatteplots.png)
+</details>
+
+### Page 3 - Predict House Price
+
+* Details business requirement 2
+* Gives details of each of the variables shown and how to complete these
+* Has 5 input sections where the client can enter the details, of the property, they would like to see the predicted price of
+    * Above Grade/Ground Living Area:
+        * The value must be greater than equal to zero. Although the minimum area in the dataset is 334 I chose to allow the user to input numbers greater or equal to zero as there could be the case of there being very little or no property above ground
+        * The maximum value is set to 11,284 which is double the maximum of the highest value in the dataset
+        * The default value is the median of the dataset values
+    * Overall Quality:
+        * The user can input an integer from 1 to 10, with 1 being 'very poor' and 5 being 'very excellent'
+        * The default value is the median of the dataset values
+     * Kitchen Quality:
+        * The user can input an integer from 1 to 5, with 1 being 'poor' and 5 being 'excellent'
+        * The default value is the median of the dataset values
+    * Total Basement Area:
+        * The minimum value is set to 0 as there could be no basement
+        * The maximum value is set to 12,220 which is double the maximum of the highest value in the dataset
+        * The default value is the median of the dataset values
+    * Total Garage Area:
+        * The minimum value is set to 0 as there could be no garage
+        * The maximum value is set to 2,836 which is double the maximum of the highest value in the dataset
+        * The default value is the median of the dataset values
+* Has a button where the user can submit the details entered and will receive a sale price prediction based on these
+* The next section is to show the predicted prices of the clients 4 inherited houses
+* There is a checkbox where the client can see the data for these houses
+* There is a button the client can press that will show the individual predicted sale price of these houses aswell as the summed price
+
+<details>
+<summary>Predict House Price Page Screenshots</summary>
+![Business Requirement 2 Section Screenshot](static/images/house-price-study.png)
+![Single Property Section Screenshot](static/images/single-property-section.png)
+![Run Predictive Analysis Single Screenshot](static/images/run-predictive-analysis-single.png)
+![Inherited Houses Section Screenshot](static/images/inherited-houses-section.png)
+![Inspect Inherited Housing Data Screenshot](static/images/inspect-inherited-housing-data.png)
+![Run Predictive Analysis Inherited Screenshot](static/images/run-predictive-analysis-inherited.png)
+</details>
+
+### Page 4 - Project Hypothesis and Valdation
+
+* Details the initial hypothesis that were made and the consulsion to these based on the analysis
+
+<details>
+<summary>Project Hypothesis and Validation Page Screenshots</summary>
+![Project Hypothesis and Validation Page Screenshot](static/images/project-hypothesis-and-validation.png)
+</details>
+
+### Page 5 - ML Predict House Price
+
+* Evalutes the ML pipline used
+* Details the pipeline used
+* Shows the features the model was trained on and there importance. This is shown as both a list and a bar chart
+* Shows the pipeline performance
+
+<details>
+<summary>ML - Predict House Price Page Screenshots</summary>
+![Pipeline Section Screenshot](static/images/pipeline.png)
+![Feature Importance Section Screenshot](static/images/feature-importance.png)
+![Pipline Performance Screenshot](static/images/pipeline-performance.png)
+</details>
 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+
+There are no unfixed bugs that I'm aware of
+
 
 ## Deployment
+
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
+* The App live link is: https://heritage-housing-739de1000c22.herokuapp.com/
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
@@ -110,26 +205,38 @@ Although your friend has an excellent understanding of property prices in her ow
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
 
+## Main Data Analysis and Machine Learning Libraries
+
+The technologies used for this project were:
+
+### Frameworks and Programs Used
+
+* Codeanywhere – To write the code
+* Github - To save and store files
+* Heroku - To deploy the project
+* Jigsaw Validator – To check code meets the required standard
+* Jupyter Notebooks - Contains the code to explore, clean, feature engineer and model the data 
+* Kaggle - The dataset was downloaded from Kaggle
+* Streamlit - Delivers the data app
+
+### Libraries Used
+
+* feature-engine==1.0.2 - 
+* matplotlib==3.3.1
+* numpy==1.18.5
+* pandas==1.4.2
+* pingouin==0.3.12
+* plotly==4.12.0
+* scikit-learn==0.24.2
+* seaborn==0.11.0
+* xgboost==1.2.1
+* ydata-profiling==4.4.0
 
 ## Credits 
 
 * In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
 * You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
-
 
 
 ## Acknowledgements (optional)
