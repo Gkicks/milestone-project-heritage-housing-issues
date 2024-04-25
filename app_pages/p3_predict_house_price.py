@@ -87,7 +87,7 @@ def DrawInputsWidgets():
     with col1:
         feature = "GrLivArea"
         st_widget = st.number_input(
-            label=feature,
+            label="Above Ground Living Area",
             min_value=0,
             max_value=11284,
             value=int(df[feature].median())
@@ -97,7 +97,7 @@ def DrawInputsWidgets():
     with col2:
         feature = "OverallQual"
         st_widget = st.number_input(
-            label=feature,
+            label="Overall Quality",
             min_value=1,
             max_value=10,
             value=int(df[feature].median())
@@ -107,7 +107,7 @@ def DrawInputsWidgets():
     with col3:
         feature = "KitchenQual"
         st_widget = st.number_input(
-            label=feature,
+            label="Kitchen Quality",
             min_value=1,
             max_value=5,
             value=int(df[feature].median())
@@ -117,7 +117,7 @@ def DrawInputsWidgets():
     with col4:
         feature = "TotalBsmtSF"
         st_widget = st.number_input(
-            label=feature,
+            label="Total Basement Area",
             min_value=0,
             max_value=12220,
             value=int(df[feature].median())
@@ -127,7 +127,7 @@ def DrawInputsWidgets():
     with col5:
         feature = "GarageArea"
         st_widget = st.number_input(
-            label=feature,
+            label="Garage Area",
             min_value=0,
             max_value=2836,
             value=int(df[feature].median())
