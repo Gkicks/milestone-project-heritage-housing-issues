@@ -12,7 +12,8 @@ def page_ml_predict_house_price_body():
     sale_price_pipe_model = load_pkl_file(
         f'outputs/ml_pipeline/predict_sale_price/{version}/pipeline.pkl')
     sale_price_feat_importance = plt.imread(
-        f"outputs/ml_pipeline/predict_sale_price/{version}/features_importance.png")
+        f"outputs/ml_pipeline/predict_sale_price/{version}/features_importance"
+        f".png")
     X_train = pd.read_csv(
         f"outputs/ml_pipeline/predict_sale_price/{version}/X_train.csv")
     X_test = pd.read_csv(
@@ -27,7 +28,8 @@ def page_ml_predict_house_price_body():
     st.info(
         f"* The aim of the pipline was to achieve an R2 score of at 0.75 "
         f"on the train set as well as on the test set\n"
-        f"* The pipeline performance on train and test set is 0.98 and 0.83, respectively."
+        f"* The pipeline performance on train and test set is 0.98 and 0.83, "
+        f"respectively."
     )
 
     # show pipelines
@@ -42,8 +44,8 @@ def page_ml_predict_house_price_body():
     st.write(X_train.columns.to_list())
     st.image(sale_price_feat_importance)
 
-
     # evaluate performance on train and test set
     st.write("---")
     st.write("### Pipeline Performance")
     performance(X_train, y_train, X_test, y_test, sale_price_pipe_model)
+    

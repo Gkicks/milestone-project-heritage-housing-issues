@@ -38,13 +38,14 @@ def predict_sale_price_inherited(X_live, house_features, sale_price_pipeline):
     sale_price_p2 = int(sale_price_prediction_p2)
     sale_price_p3 = int(sale_price_prediction_p3)
     sale_price_p4 = int(sale_price_prediction_p4)
-    
+
     st.write(
         f"* The predicted sale price of property 1 is ${sale_price_p1:,}\n"
         f"* The predicted sale price of property 2 is ${sale_price_p2:,}\n"
         f"* The predicted sale price of property 3 is ${sale_price_p3:,}\n"
         f"* The predicted sale price of property 4 is ${sale_price_p4:,}\n"
-        f"* **The predicted sale price of all properties combined is ${sale_price_p1+sale_price_p2+sale_price_p3+sale_price_p4:,}**"
-    )
+        f"* **The predicted sale price of all properties combined is "
+        f"${sale_price_p1+sale_price_p2+sale_price_p3+sale_price_p4:,}**"
+        )
 
-    return sale_price_prediction    
+    return sale_price_prediction

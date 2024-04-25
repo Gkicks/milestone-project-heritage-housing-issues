@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
-from src.data_management import load_housing_data, load_inherited_housing_data, load_pkl_file
-from src.machine_learning.predictive_analysis_ui import predict_sale_price_single, predict_sale_price_inherited 
+from src.data_management import (
+    load_housing_data, load_inherited_housing_data, load_pkl_file)
+from src.machine_learning.predictive_analysis_ui import (
+    predict_sale_price_single, predict_sale_price_inherited)
 
 
 def page_predict_house_price_body():
@@ -10,7 +12,8 @@ def page_predict_house_price_body():
     version = 'v1'
     sale_price_pipeline = load_pkl_file(
         f"outputs/ml_pipeline/predict_sale_price/{version}/pipeline.pkl")
-    house_features = (pd.read_csv(f"outputs/ml_pipeline/predict_sale_price/{version}/X_train.csv")
+    house_features = (pd.read_csv(
+        f"outputs/ml_pipeline/predict_sale_price/{version}/X_train.csv")
                       .columns
                       .to_list()
                       )
@@ -33,7 +36,7 @@ def page_predict_house_price_body():
         f"to 5 being 'excellent'\n"
         f"* Use the + and - buttons to increase / decrease the numbers or "
         f"type over the number shown\n"
-        f"* Press 'Run Predictive Analysis' to shown the predicted house price "
+        f"* Press 'Run Predictive Analysis' to show the predicted house price "
         f"based on the variables entered"
     )
     st.text("")
@@ -58,7 +61,9 @@ def page_predict_house_price_body():
     # display inherited houses data
     if st.checkbox("Inspect Inherited Housing Data"):
         st.write(
-            f"* The dataset has {inherited_df.shape[0]} rows and {inherited_df.shape[1]} columns. \n")
+            f"* The dataset has {inherited_df.shape[0]} rows and "
+            f"{inherited_df.shape[1]} columns. \n"
+                )
 
         st.write(inherited_df)
 
@@ -67,9 +72,10 @@ def page_predict_house_price_body():
     # predict inherited houses data
     if st.button("Run Predictive Analysis on Inherited Houses"):
         st.write(
-            sale_price_prediction = predict_sale_price_inherited(
-            inherited_df, house_features, sale_price_pipeline)
+            sale_price_prediction=predict_sale_price_inherited(
+                inherited_df, house_features, sale_price_pipeline)
         )
+
 
 def DrawInputsWidgets():
 
@@ -113,7 +119,7 @@ def DrawInputsWidgets():
             value=int(df[feature].median())
         )
     X_live[feature] = st_widget
-    
+
     with col4:
         feature = "TotalBsmtSF"
         st_widget = st.number_input(
