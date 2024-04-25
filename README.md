@@ -104,8 +104,8 @@ Although your friend has an excellent understanding of property prices in her ow
 * Sets out the business requirements
 
 <details>
-
 <summary>Project Summary Page Screenshots</summary>
+
 ![Project Summary Page Screenshot](static/images/project-summary.png)
 
 </details>
@@ -113,17 +113,17 @@ Although your friend has an excellent understanding of property prices in her ow
 ### Page 2 - House Sale Price Study
 
 * Details business requirement 1
-* Has a button the user can click that will display the housing data
+* Has a checkbox the user can click that will display the housing data
 * Shows the variables most correlated to sale price
 * Gives the conclusions that have been reached from the house sale price study
-* Has a button the user can click that will display graphs shows a scatterplot, for each variable, against sale price
+* Has a checkbox the user can click that will display graphs shows a scatterplot, for each variable, against sale price
 
 <details>
 <summary>House Sale Price Study Page Screenshots</summary>
 
 ![House Price Study Page Screenshot](static/images/house-price-study.png)
 ![Inspect Housing Data Screenshot](static/images/inspect-housing-data.png)
-![Scatterplots Screenshot](static/images/scatteplots.png)
+![Scatterplots Screenshot](static/images/scatterplots.png)
 
 </details>
 
@@ -189,7 +189,7 @@ Although your friend has an excellent understanding of property prices in her ow
 <summary>ML - Predict House Price Page Screenshots</summary>
 
 ![Pipeline Section Screenshot](static/images/pipeline.png)
-![Feature Importance Section Screenshot](static/images/feature-importance.png)
+![Feature Importance Section Screenshot](static/images/features-importance.png)
 ![Pipline Performance Screenshot](static/images/pipeline-performance.png)
 
 </details>
