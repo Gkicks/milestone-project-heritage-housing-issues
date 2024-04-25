@@ -212,10 +212,10 @@ The technologies used for this project were:
 
 ### Frameworks and Programs Used
 
+* CI Python Linter – To check code meets the required standard
 * Codeanywhere – To write the code
 * Github - To save and store files
 * Heroku - To deploy the project
-* Jigsaw Validator – To check code meets the required standard
 * Jupyter Notebooks - Contains the code to explore, clean, feature engineer and model the data 
 * Kaggle - The dataset was downloaded from Kaggle
 * Streamlit - Delivers the data app
@@ -235,10 +235,22 @@ The technologies used for this project were:
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+* The code was based on the Code Institute Walkthough 2 - Churnometer project and adapted to fit the business requirements and data for this project
+* I used the following websites to help with this project:
+    * https://pandas.pydata.org
+    * https://stackoverflow.com
+    * https://www.geeksforgeeks.org
+    * https://scikit-learn.org/
+    * https://xgboost.readthedocs.io
+    * https://towardsdatascience.com
+    * https://feature-engine.trainindata.com
+    * https://nbviewer.org/github/feature-engine/feature-engine-
+    * https://jagan-singhh.medium.com
 
 
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
+## Acknowledgements
 
+I would like to thank:
+
+* My mentor, Mo Shami, for his advice and guidance
+* The Code Institute Slack community
