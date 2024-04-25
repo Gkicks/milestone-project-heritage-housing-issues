@@ -1,9 +1,6 @@
 import streamlit as st
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set_style('whitegrid')
 
 
 # code copied from "Modeling and Evaluation" notebooks
