@@ -27,7 +27,7 @@ def page_predict_house_price_body():
     st.warning(
         f"* Above Ground Area, Total Basement Area and Garage Area are all "
         f"measured in square feet\n"
-        f"* Overall Quality is measured from 1-10, with 1 being 'vey poor' "
+        f"* Overall Quality is measured from 1-10, with 1 being 'very poor' "
         f"to 10 being 'very excellent\n"
         f"* Kitchen Quality is measured from 1-6, with 1 being 'poor' "
         f"to 6 being 'excellent\n"
