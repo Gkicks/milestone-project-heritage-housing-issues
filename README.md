@@ -104,8 +104,10 @@ Although your friend has an excellent understanding of property prices in her ow
 * Sets out the business requirements
 
 <details>
+
 <summary>Project Summary Page Screenshots</summary>
 ![Project Summary Page Screenshot](static/images/project-summary.png)
+
 </details>
 
 ### Page 2 - House Sale Price Study
@@ -118,9 +120,11 @@ Although your friend has an excellent understanding of property prices in her ow
 
 <details>
 <summary>House Sale Price Study Page Screenshots</summary>
+
 ![House Price Study Page Screenshot](static/images/house-price-study.png)
 ![Inspect Housing Data Screenshot](static/images/inspect-housing-data.png)
 ![Scatterplots Screenshot](static/images/scatteplots.png)
+
 </details>
 
 ### Page 3 - Predict House Price
@@ -153,12 +157,14 @@ Although your friend has an excellent understanding of property prices in her ow
 
 <details>
 <summary>Predict House Price Page Screenshots</summary>
+
 ![Business Requirement 2 Section Screenshot](static/images/house-price-study.png)
 ![Single Property Section Screenshot](static/images/single-property-section.png)
 ![Run Predictive Analysis Single Screenshot](static/images/run-predictive-analysis-single.png)
 ![Inherited Houses Section Screenshot](static/images/inherited-houses-section.png)
 ![Inspect Inherited Housing Data Screenshot](static/images/inspect-inherited-housing-data.png)
 ![Run Predictive Analysis Inherited Screenshot](static/images/run-predictive-analysis-inherited.png)
+
 </details>
 
 ### Page 4 - Project Hypothesis and Valdation
@@ -167,7 +173,9 @@ Although your friend has an excellent understanding of property prices in her ow
 
 <details>
 <summary>Project Hypothesis and Validation Page Screenshots</summary>
+
 ![Project Hypothesis and Validation Page Screenshot](static/images/project-hypothesis-and-validation.png)
+
 </details>
 
 ### Page 5 - ML Predict House Price
@@ -179,9 +187,11 @@ Although your friend has an excellent understanding of property prices in her ow
 
 <details>
 <summary>ML - Predict House Price Page Screenshots</summary>
+
 ![Pipeline Section Screenshot](static/images/pipeline.png)
 ![Feature Importance Section Screenshot](static/images/feature-importance.png)
 ![Pipline Performance Screenshot](static/images/pipeline-performance.png)
+
 </details>
 
 
