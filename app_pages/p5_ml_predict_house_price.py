@@ -48,4 +48,3 @@ def page_ml_predict_house_price_body():
     st.write("---")
     st.write("### Pipeline Performance")
     performance(X_train, y_train, X_test, y_test, sale_price_pipe_model)
-    

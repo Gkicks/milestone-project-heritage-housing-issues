@@ -23,4 +23,3 @@ def load_inherited_housing_data():
 
 def load_pkl_file(file_path):
     return joblib.load(filename=file_path)
-    

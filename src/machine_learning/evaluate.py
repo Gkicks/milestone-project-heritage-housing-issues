@@ -15,7 +15,8 @@ def performance(X_train, y_train, X_test, y_test, pipeline):
 def evaluation(X, y, pipeline):
     prediction = pipeline.predict(X)
     st.write('R2 Score:', r2_score(y, prediction).round(2))
-    st.write('Mean Absolute Error:', mean_absolute_error(y, prediction).round(2))
+    st.write('Mean Absolute Error:', mean_absolute_error(
+        y, prediction).round(2))
     st.write('Mean Squared Error:', mean_squared_error(y, prediction).round(2))
     st.write('Root Mean Squared Error:', np.sqrt(
         mean_squared_error(y, prediction)).round(2))
