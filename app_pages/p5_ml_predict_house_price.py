@@ -33,7 +33,7 @@ def page_ml_predict_house_price_body():
     # show pipelines
     st.write("---")
 
-    st.write("* The The pipeline that was used in this project:")
+    st.write("* The pipeline that was used in this project:")
     st.write(sale_price_pipe_model)
 
     # show feature importance plot
