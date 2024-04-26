@@ -83,7 +83,7 @@ Although your friend has an excellent understanding of property prices in her ow
 * Epic 2 - Data visualization, cleaning, and preparation
     * As a data analysist I want to clean the dataset used so there are fewer errors and the predictions I make are more accurate
     * As a client I want to see graphs to show which variables have the most impact on sale price
-    * AS a client I want to see heatmaps to show which variables are most correlated with sale price 
+    * As a client I want to see heatmaps to show which variables are most correlated with sale price 
 * Epic 3 - Model training, optimization and validation
     * As a data analyst I want to find the pipeline that delivers the best results so that my predictions have more accuracy
     * As a data analyst I want to achieve an R2 score of at least 0.75 to meet the business expectation
@@ -259,9 +259,107 @@ These issues have now all been resolved and each page passes this validation
 
 ### Full Testing
 
+#### Project Summary Page
+
+**Action**|**Expected Result**|**As Expected?**
+:-----:|:-----:|:-----:
+Click Project Summary radio button|Takes user to Project Summary page|Yes
+Click ReadMe link|Takes user to ReadMe in Github|Yes
+
+#### House Sale Price Study Page
+
+**Action**|**Expected Result**|**As Expected?**
+:-----:|:-----:|:-----:
+Click House Sale Price Study radio button|Takes user to House Sale Price Study page|Yes
+Click Inspect Housing Data checkbox|Displays the dataframe of housing data|Yes
+Click Sale Price Levels per Variable checkbox|Displays scatterplots of sale price against different variables|Yes
+
+#### Predict House Price Page
+
+**Action**|**Expected Result**|**As Expected?**
+:-----:|:-----:|:-----:
+Click Predict House Price radio button|Takes user to Predict House Price Page|Yes
+Enter negative number in Above Ground Living Area input|An error to be displayed that the value must be greater or equal to 0|Yes
+Enter number greater than 11,284 in Above Ground Living Area input|An error to be displayed that the value must be less than or equal to 11,284|Yes
+Press the + button in Above Ground Living Area input|The integer input to increase by 1|Yes
+Press the + button in Above Ground Living Area input when the integer reaches 1|For this to be disabled|Yes
+Press the - button in Above Ground Living Area input|The integer input to decrease by 1|Yes
+Press the - button in Above Ground Living Area input when the integer reaches 11,284|For this to be disabled|Yes
+Enter number less than 1 in Overall Quality input|An error to be displayed that the value must be greater or equal to 1|Yes
+Enter number greater than 10 in Overall Quality input|An error to be displayed that the value must be less than or equal to 10|Yes
+Press the + button in Overall Quality input|The integer input to increase by 1|Yes
+Press the + button in Overall Quality input when the integer reaches 1|For this to be disabled|Yes
+Press the - button in Overall Quality input|The integer input to decrease by 1|Yes
+Press the - button in Overall Quality input when the integer reaches 10|For this to be disabled|Yes
+Enter number less than 1 in Kitchen Quality input|An error to be displayed that the value must be greater or equal to 1|Yes
+Enter number greater than 6 in Kitchen Quality input|An error to be displayed that the value must be less than or equal to 6|Yes
+Press the + button in Overall Kitchen input|The integer input to increase by 1|Yes
+Press the + button in Overall Kitchen input when the integer reaches 1|For this to be disabled|Yes
+Press the - button in Overall Kitchen input|The integer input to decrease by 1|Yes
+Press the - button in Overall Kitchen input when the integer reaches 6|For this to be disabled|Yes
+Enter negative number in Total Basement Area input|An error to be displayed that the value must be greater or equal to 0|Yes
+Enter number greater than 12,220 in Total Basement Area input|An error to be displayed that the value must be less than or equal to 11,284|Yes
+Press the + button in Total Basement Area input|The integer input to increase by 1|Yes
+Press the + button in Total Basement Area input when the integer reaches 1|For this to be disabled|Yes
+Press the - button in Total Basement Area input|The integer input to decrease by 1|Yes
+Press the - button in Total Basement Area input when the integer reaches 12,220|For this to be disabled|Yes
+Enter negative number in Garage Area input|An error to be displayed that the value must be greater or equal to 0|Yes
+Enter number greater than 2,836 in Garage Area input|An error to be displayed that the value must be less than or equal to 11,284|Yes
+Press the + button in Garage Area input|The integer input to increase by 1|Yes
+Press the + button in Garage Area input when the integer reaches 1|For this to be disabled|Yes
+Press the - button in Total Garage Area input|The integer input to decrease by 1|Yes
+Press the - button in Total Garage Area input when the integer reaches 2,836|For this to be disabled|Yes
+Press the Run Predictive Analysis button when all valid numbers are inputted|The predicted price of the property to be displayed|Yes
+Click Inspect Inherited Housing Data checkbox|Displays the dataframe of inherited housing data|Yes
+Press the Run Predictive Analysis on inherited Houses button|Displays the individual sale price prediction for the individual houses aswell as the summed price|Yes
+
+#### Project Hypothesis and Validation Page
+
+**Action**|**Expected Result**|**As Expected?**
+:-----:|:-----:|:-----:
+Click Hypothesis and Validation radio button|Takes user to Hypothesis and Validation page|Yes
+
+#### ML - Predict House Price Page
+
+**Action**|**Expected Result**|**As Expected?**
+:-----:|:-----:|:-----:
+Click ML - Predict House Price radio button|Takes user toProject Hypothesis and Validation Page page|Yes
 
 ### User Stories
 
+#### Epic 1
+
+**User Story**|**How This Has Been Met**
+:-----:|:-----:
+As a data analyst I want to source a dataset of accurate data so that I have high quality data on which to build my predictions|The data was taken from Kaggle and is thought to be an accurate representation of the house prices in Ames, Iowa
+
+#### Epic 2
+
+**User Story**|**How This Has Been Met**
+:-----:|:-----:
+As a data analysist I want to clean the dataset used so there are fewer errors and the predictions I make are more accurate|Two of the variables were dropped due to having a high percentage of missing values - EnclosedPorch (90.7%) and WoodDeckSF (89.4%). Decisions were based on the values to input for the other missing data following analysis
+As a client I want to see graphs to show which variables have the most impact on sale price|The user can see scattergraphs showing sale price plotted against each of the most correlated variable. These are shown when the user clicks the Sale Price Level per Variable in the House Sale Price Study page
+AS a client I want to see heatmaps to show which variables are most correlated with sale price|Both Pearson and Spearman correlations were run. Heatmaps for each of these are displayed on the dashboard when the user clicks the relevant checkbox
+
+#### Epic 3
+
+User Story	How This Has Been Met
+As a data analyst I want to find the pipeline that delivers the best results so that my predictions have more accuracy	Transformers were used in the feature engineering stage - numerical transformation, handling of outliers using Windsorizer and smart correlation selection. The transformations were compared and the best performing transformer used on each variable that had high correlation. This was combined with the data cleaning steps to form the pipeline. Hyperparmeter Optimization was then carried out to find the best hyperperameter configeration - ExtraTreesRegressor was the best performing of these
+As a data analyst I want to achieve an R2 score of at least 0.75 to meet the business expectation	Following the pipeline being fit with the best features, the pipeline performance on the train and test set is 0.98 and 0.83, respectively
+
+#### Epic 4
+
+**User Story**|**How This Has Been Met**
+:-----:|:-----:
+As a client I want to have a simple interface so I can quickly find the predicted value of a property|The dashboard is simple to use and intuitive
+As a client I want to be able to see the individual predicted prices of my 4 inherited properties, as well as the summed price, so I can easily access this information|These are both shown on the dashboard. The client is able to iput different configerations, of the features improtance variables, to find how these affect sale price
+
+#### Epic 5
+
+**User Story**|**How This Has Been Met**
+:-----:|:-----:
+As a data analyst I was my app to be deployed so that my client can easily access this|The app has been deployed through Heroku
+As I client I want to be able to access the deployed app so I can run the predictions for the houses I would like to know the predicted price/s of|The client is able to access the app using the Heroku link shown in this ReadMe
 
 ## Credits 
 
