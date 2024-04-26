@@ -117,13 +117,21 @@ Although your friend has an excellent understanding of property prices in her ow
 * Shows the variables most correlated to sale price
 * Gives the conclusions that have been reached from the house sale price study
 * Has a checkbox the user can click that will display graphs shows a scatterplot, for each variable, against sale price
+* Has a checkbox the user can click that will display the Spearman correlation heatmap
+* Has a checkbox the user can click that will display the Pearson correlation heatmap
 
 <details>
 <summary>House Sale Price Study Page Screenshots</summary>
 
 ![House Price Study Page Screenshot](static/images/house-price-study.png)
+
 ![Inspect Housing Data Screenshot](static/images/inspect-housing-data.png)
+
 ![Scatterplots Screenshot](static/images/scatterplots.png)
+
+![Spearman Correlation Screenshot](static/images/spearman.png)
+
+![Pearson Correlation Screenshot](static/images/pearson.png)
 
 </details>
 
@@ -159,10 +167,15 @@ Although your friend has an excellent understanding of property prices in her ow
 <summary>Predict House Price Page Screenshots</summary>
 
 ![Business Requirement 2 Section Screenshot](static/images/house-price-study.png)
+
 ![Single Property Section Screenshot](static/images/single-property-section.png)
+
 ![Run Predictive Analysis Single Screenshot](static/images/run-predictive-analysis-single.png)
+
 ![Inherited Houses Section Screenshot](static/images/inherited-houses-section.png)
+
 ![Inspect Inherited Housing Data Screenshot](static/images/inspect-inherited-housing-data.png)
+
 ![Run Predictive Analysis Inherited Screenshot](static/images/run-predictive-analysis-inherited.png)
 
 </details>
@@ -189,7 +202,9 @@ Although your friend has an excellent understanding of property prices in her ow
 <summary>ML - Predict House Price Page Screenshots</summary>
 
 ![Pipeline Section Screenshot](static/images/pipeline.png)
+
 ![Feature Importance Section Screenshot](static/images/features-importance.png)
+
 ![Pipline Performance Screenshot](static/images/pipeline-performance.png)
 
 </details>
