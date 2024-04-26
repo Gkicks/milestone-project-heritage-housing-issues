@@ -2,7 +2,6 @@ import plotly.express as px
 import numpy as np
 import streamlit as st
 from src.data_management import load_housing_data
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style("whitegrid")
@@ -75,6 +74,18 @@ def page_sale_price_study_body():
     if st.checkbox("Sale Price Levels per Variable"):
         plot_scatter(df_eda, vars_to_study, 'SalePrice')
 
+    # Spearman Correlation
+    if st.checkbox("Spearman Correlation"):
+        df_spearman_heat = df.corr(method='spearman')
+        heatmap_corr(
+            df=df_spearman_heat, threshold=0.6, figsize=(15, 5), font_annot=8)
+
+    # Pearson Correlation
+    if st.checkbox("Pearson Correlation"):
+        df_pearson_heat = df.corr(method='pearson')
+        heatmap_corr(
+            df=df_pearson_heat, threshold=0.6, figsize=(15, 5), font_annot=8)
+
 
 # plots each variable in a scatter chart, against the target variable
 def plot_scatter(df, col, target_var):
@@ -83,4 +94,22 @@ def plot_scatter(df, col, target_var):
         sns.regplot(data=df, x=col, y=target_var, scatter_kws={
             "color": "blue"}, line_kws={"color": "red"})
         plt.title(f"{col}", fontsize=20, y=1.1)
+        st.pyplot(fig)
+
+
+# display heatmat for Spearman Correlation
+def heatmap_corr(df, threshold, figsize, font_annot):
+    if len(df.columns) > 1:
+        mask = np.zeros_like(df, dtype=bool)
+        mask[np.triu_indices_from(mask)] = True
+        mask[abs(df) < threshold] = True
+
+        fig, axes = plt.subplots(figsize=figsize)
+        sns.heatmap(df, annot=True, xticklabels=True, yticklabels=True,
+                    mask=mask, cmap='viridis', annot_kws={
+                        "size": font_annot}, ax=axes,
+                    linewidth=0.5
+                    )
+        axes.set_yticklabels(df.columns, rotation=0)
+        plt.ylim(len(df.columns), 0)
         st.pyplot(fig)
