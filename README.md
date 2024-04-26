@@ -373,9 +373,10 @@ AS a client I want to see heatmaps to show which variables are most correlated w
 
 ### Epic 3 - Model training, optimization and validation
 
-User Story	How This Has Been Met
-As a data analyst I want to find the pipeline that delivers the best results so that my predictions have more accuracy	Transformers were used in the feature engineering stage - numerical transformation, handling of outliers using Windsorizer and smart correlation selection. The transformations were compared and the best performing transformer used on each variable that had high correlation. This was combined with the data cleaning steps to form the pipeline. Hyperparmeter Optimization was then carried out to find the best hyperperameter configeration - ExtraTreesRegressor was the best performing of these
-As a data analyst I want to achieve an R2 score of at least 0.75 to meet the business expectation	Following the pipeline being fit with the best features, the pipeline performance on the train and test set is 0.98 and 0.83, respectively
+**User Story**|**How This Has Been Met**
+:-----:|:-----:
+As a data analyst I want to find the pipeline that delivers the best results so that my predictions have more accuracy|Transformers were used in the feature engineering stage - numerical transformation, handling of outliers using Windsorizer and smart correlation selection. The transformations were compared and the best performing transformer used on each variable that had high correlation. This was combined with the data cleaning steps to form the pipeline. Hyperparmeter Optimization was then carried out to find the best hyperperameter configeration - ExtraTreesRegressor was the best performing of these
+As a data analyst I want to achieve an R2 score of at least 0.75 to meet the business expectation|Following the pipeline being fit with the best features, the pipeline performance on the train and test set is 0.98 and 0.83, respectively
 
 ### Epic 4 - Dashboard planning, designing, and development
 
