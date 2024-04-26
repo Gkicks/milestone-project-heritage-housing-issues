@@ -7,13 +7,46 @@ Visit the deployed site here: [Heritage Housing](https://heritage-housing-739de1
 
 ![Am I Responsive Screenshot](static/images/amiresponsive.png)
 
-
 ## Contents
 
-- [Heritage Housing](#heritage-housing)
+- [Heritage Housing Sale Price Predictor](#heritage-housing-sale-price-predictor)
+   * [Contents](#contents)
+- [Dataset Content  ](#dataset-content)
+- [Business Requirements](#business-requirements)
+- [Hypothesis and how to validate?](#hypothesis-and-how-to-validate)
+- [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+- [ML Business Case](#ml-business-case)
+   * [Epics / User Stories](#epics-user-stories)
+- [Dashboard Design](#dashboard-design)
+   * [Page 1 - Project Summary](#page-1-project-summary)
+   * [Page 2 - House Sale Price Study](#page-2-house-sale-price-study)
+   * [Page 3 - Predict House Price](#page-3-predict-house-price)
+   * [Page 4 - Project Hypothesis and Valdation](#page-4-project-hypothesis-and-valdation)
+   * [Page 5 - ML Predict House Price](#page-5-ml-predict-house-price)
+- [Unfixed Bugs](#unfixed-bugs)
+- [Deployment](#deployment)
+   * [Heroku](#heroku)
+- [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+   * [Frameworks and Programs Used](#frameworks-and-programs-used)
+   * [Libraries Used](#libraries-used)
+- [Testing](#testing)
+   * [PEP8 Validation](#pep8-validation)
+   * [Full Testing](#full-testing)
+      + [Project Summary Page](#project-summary-page)
+      + [House Sale Price Study Page](#house-sale-price-study-page)
+      + [Predict House Price Page](#predict-house-price-page)
+      + [Project Hypothesis and Validation Page](#project-hypothesis-and-validation-page)
+      + [ML - Predict House Price Page](#ml-predict-house-price-page)
+   * [User Stories](#user-stories)
+      + [Epic 1 - Information gathering and data collection](#epic-1-information-gathering-and-data-collection)
+      + [Epic 2 - Data visualization, cleaning, and preparation](#epic-2-data-visualization-cleaning-and-preparation)
+      + [Epic 3 - Model training, optimization and validation](#epic-3-model-training-optimization-and-validation)
+      + [Epic 4 - Dashboard planning, designing, and development](#epic-4-dashboard-planning-designing-and-development)
+      + [Epic 5 - Dashboard deployment and release](#epic-5-dashboard-deployment-and-release)
+- [Credits ](#credits)
+- [Acknowledgements](#acknowledgements)
 
-
-## Dataset Content  
+# Dataset Content  
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
@@ -44,8 +77,7 @@ Visit the deployed site here: [Heritage Housing](https://heritage-housing-739de1
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-
-## Business Requirements
+# Business Requirements
 As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
 Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
@@ -53,8 +85,7 @@ Although your friend has an excellent understanding of property prices in her ow
 * Business Requirement 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
 * Business Requirement 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
-
-## Hypothesis and how to validate?
+# Hypothesis and how to validate?
 * We suspect that quality will have an impact on house price, with houses that have higher quality features fetching a higher sale price.
     * This will be determined though a correlation study
     * Correct. The correlation study shows that overall quality and kitchen quality are two of the main indicators of sale price, with the higher quality finishes having higher sale price
@@ -65,18 +96,16 @@ Although your friend has an excellent understanding of property prices in her ow
     * This will be determined though a correlation study
     * Correct. The correlation study show that both the year built and the year the garage was built have a high correlation with sale price however, during feature engineering, they were not found to be the features that were most important
 
-
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+# The rationale to map the business requirements to the Data Visualisations and ML tasks
 * Conventional data analysis to investigate how house attributes are correlated with the sale prices
 * The data suggests a regressor where the target is the sale price
 * The inputs are house attribute information and the output is the predicted sale price
 * We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set
 * There are no privacy or ethical concerns
 
+# ML Business Case
 
-## ML Business Case
-
-### Epics / User Stories
+## Epics / User Stories
 
 * Epic 1 - Information gathering and data collection
     * As a data analyst I want to source a dataset of accurate data so that I have high quality data on which to build my predictions 
@@ -95,9 +124,9 @@ Although your friend has an excellent understanding of property prices in her ow
     * As I client I want to be able to access the deployed app so I can run the predictions for the houses I would like to know the predicted price/s of
 
 
-## Dashboard Design
+# Dashboard Design
 
-### Page 1 - Project Summary
+## Page 1 - Project Summary
 
 * A summary of the project dataset
 * A link to the ReadMe file
@@ -110,7 +139,7 @@ Although your friend has an excellent understanding of property prices in her ow
 
 </details>
 
-### Page 2 - House Sale Price Study
+## Page 2 - House Sale Price Study
 
 * Details business requirement 1
 * Has a checkbox the user can click that will display the housing data
@@ -124,18 +153,14 @@ Although your friend has an excellent understanding of property prices in her ow
 <summary>House Sale Price Study Page Screenshots</summary>
 
 ![House Price Study Page Screenshot](static/images/house-price-study.png)
-
 ![Inspect Housing Data Screenshot](static/images/inspect-housing-data.png)
-
 ![Scatterplots Screenshot](static/images/scatterplots.png)
-
 ![Spearman Correlation Screenshot](static/images/spearman.png)
-
 ![Pearson Correlation Screenshot](static/images/pearson.png)
 
 </details>
 
-### Page 3 - Predict House Price
+## Page 3 - Predict House Price
 
 * Details business requirement 2
 * Gives details of each of the variables shown and how to complete these
@@ -167,20 +192,15 @@ Although your friend has an excellent understanding of property prices in her ow
 <summary>Predict House Price Page Screenshots</summary>
 
 ![Business Requirement 2 Section Screenshot](static/images/house-price-study.png)
-
 ![Single Property Section Screenshot](static/images/single-property-section.png)
-
 ![Run Predictive Analysis Single Screenshot](static/images/run-predictive-analysis-single.png)
-
 ![Inherited Houses Section Screenshot](static/images/inherited-houses-section.png)
-
 ![Inspect Inherited Housing Data Screenshot](static/images/inspect-inherited-housing-data.png)
-
 ![Run Predictive Analysis Inherited Screenshot](static/images/run-predictive-analysis-inherited.png)
 
 </details>
 
-### Page 4 - Project Hypothesis and Valdation
+## Page 4 - Project Hypothesis and Valdation
 
 * Details the initial hypothesis that were made and the consulsion to these based on the analysis
 
@@ -191,7 +211,7 @@ Although your friend has an excellent understanding of property prices in her ow
 
 </details>
 
-### Page 5 - ML Predict House Price
+## Page 5 - ML Predict House Price
 
 * Evalutes the ML pipline used
 * Details the pipeline used
@@ -202,22 +222,18 @@ Although your friend has an excellent understanding of property prices in her ow
 <summary>ML - Predict House Price Page Screenshots</summary>
 
 ![Pipeline Section Screenshot](static/images/pipeline.png)
-
 ![Feature Importance Section Screenshot](static/images/features-importance.png)
-
 ![Pipline Performance Screenshot](static/images/pipeline-performance.png)
 
 </details>
 
-
-## Unfixed Bugs
+# Unfixed Bugs
 
 There are no unfixed bugs that I'm aware of
 
+# Deployment
 
-## Deployment
-
-### Heroku
+## Heroku
 
 * The App live link is: https://heritage-housing-739de1000c22.herokuapp.com/
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
@@ -230,12 +246,11 @@ There are no unfixed bugs that I'm aware of
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-
-## Main Data Analysis and Machine Learning Libraries
+# Main Data Analysis and Machine Learning Libraries
 
 The technologies used for this project were:
 
-### Frameworks and Programs Used
+## Frameworks and Programs Used
 
 * CI Python Linter – To check code meets the required standard
 * Codeanywhere – To write the code
@@ -245,7 +260,7 @@ The technologies used for this project were:
 * Kaggle - The dataset was downloaded from Kaggle
 * Streamlit - Delivers the data app
 
-### Libraries Used
+## Libraries Used
 
 * feature-engine==1.0.2 - 
 * matplotlib==3.3.1
@@ -258,9 +273,9 @@ The technologies used for this project were:
 * xgboost==1.2.1
 * ydata-profiling==4.4.0
 
-## Testing
+# Testing
 
-### PEP8 Validation
+## PEP8 Validation
 
 I ran my code, for all python files, through the PEP8 validator. There were some formatting errors raised:
 
@@ -272,16 +287,16 @@ I ran my code, for all python files, through the PEP8 validator. There were some
 
 These issues have now all been resolved and each page passes this validation
 
-### Full Testing
+## Full Testing
 
-#### Project Summary Page
+### Project Summary Page
 
 **Action**|**Expected Result**|**As Expected?**
 :-----:|:-----:|:-----:
 Click Project Summary radio button|Takes user to Project Summary page|Yes
 Click ReadMe link|Takes user to ReadMe in Github|Yes
 
-#### House Sale Price Study Page
+### House Sale Price Study Page
 
 **Action**|**Expected Result**|**As Expected?**
 :-----:|:-----:|:-----:
@@ -289,7 +304,7 @@ Click House Sale Price Study radio button|Takes user to House Sale Price Study p
 Click Inspect Housing Data checkbox|Displays the dataframe of housing data|Yes
 Click Sale Price Levels per Variable checkbox|Displays scatterplots of sale price against different variables|Yes
 
-#### Predict House Price Page
+### Predict House Price Page
 
 **Action**|**Expected Result**|**As Expected?**
 :-----:|:-----:|:-----:
@@ -328,27 +343,27 @@ Press the Run Predictive Analysis button when all valid numbers are inputted|The
 Click Inspect Inherited Housing Data checkbox|Displays the dataframe of inherited housing data|Yes
 Press the Run Predictive Analysis on inherited Houses button|Displays the individual sale price prediction for the individual houses aswell as the summed price|Yes
 
-#### Project Hypothesis and Validation Page
+### Project Hypothesis and Validation Page
 
 **Action**|**Expected Result**|**As Expected?**
 :-----:|:-----:|:-----:
 Click Hypothesis and Validation radio button|Takes user to Hypothesis and Validation page|Yes
 
-#### ML - Predict House Price Page
+### ML - Predict House Price Page
 
 **Action**|**Expected Result**|**As Expected?**
 :-----:|:-----:|:-----:
 Click ML - Predict House Price radio button|Takes user toProject Hypothesis and Validation Page page|Yes
 
-### User Stories
+## User Stories
 
-#### Epic 1
+### Epic 1 - Information gathering and data collection
 
 **User Story**|**How This Has Been Met**
 :-----:|:-----:
 As a data analyst I want to source a dataset of accurate data so that I have high quality data on which to build my predictions|The data was taken from Kaggle and is thought to be an accurate representation of the house prices in Ames, Iowa
 
-#### Epic 2
+### Epic 2 - Data visualization, cleaning, and preparation
 
 **User Story**|**How This Has Been Met**
 :-----:|:-----:
@@ -356,27 +371,27 @@ As a data analysist I want to clean the dataset used so there are fewer errors a
 As a client I want to see graphs to show which variables have the most impact on sale price|The user can see scattergraphs showing sale price plotted against each of the most correlated variable. These are shown when the user clicks the Sale Price Level per Variable in the House Sale Price Study page
 AS a client I want to see heatmaps to show which variables are most correlated with sale price|Both Pearson and Spearman correlations were run. Heatmaps for each of these are displayed on the dashboard when the user clicks the relevant checkbox
 
-#### Epic 3
+### Epic 3 - Model training, optimization and validation
 
 User Story	How This Has Been Met
 As a data analyst I want to find the pipeline that delivers the best results so that my predictions have more accuracy	Transformers were used in the feature engineering stage - numerical transformation, handling of outliers using Windsorizer and smart correlation selection. The transformations were compared and the best performing transformer used on each variable that had high correlation. This was combined with the data cleaning steps to form the pipeline. Hyperparmeter Optimization was then carried out to find the best hyperperameter configeration - ExtraTreesRegressor was the best performing of these
 As a data analyst I want to achieve an R2 score of at least 0.75 to meet the business expectation	Following the pipeline being fit with the best features, the pipeline performance on the train and test set is 0.98 and 0.83, respectively
 
-#### Epic 4
+### Epic 4 - Dashboard planning, designing, and development
 
 **User Story**|**How This Has Been Met**
 :-----:|:-----:
 As a client I want to have a simple interface so I can quickly find the predicted value of a property|The dashboard is simple to use and intuitive
 As a client I want to be able to see the individual predicted prices of my 4 inherited properties, as well as the summed price, so I can easily access this information|These are both shown on the dashboard. The client is able to iput different configerations, of the features improtance variables, to find how these affect sale price
 
-#### Epic 5
+### Epic 5 - Dashboard deployment and release
 
 **User Story**|**How This Has Been Met**
 :-----:|:-----:
 As a data analyst I was my app to be deployed so that my client can easily access this|The app has been deployed through Heroku
 As I client I want to be able to access the deployed app so I can run the predictions for the houses I would like to know the predicted price/s of|The client is able to access the app using the Heroku link shown in this ReadMe
 
-## Credits 
+# Credits 
 
 * The code was based on the Code Institute Walkthough 2 - Churnometer project and adapted to fit the business requirements and data for this project
 * I used the following websites to help with this project:
@@ -390,8 +405,7 @@ As I client I want to be able to access the deployed app so I can run the predic
     * https://nbviewer.org/github/feature-engine/feature-engine-
     * https://jagan-singhh.medium.com
 
-
-## Acknowledgements
+# Acknowledgements
 
 I would like to thank:
 
