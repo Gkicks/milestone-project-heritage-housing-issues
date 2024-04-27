@@ -1,7 +1,7 @@
 # Heritage Housing Sale Price Predictor
 
-The heritage housing sale price predictor is an app to predict the sale price of houses in Ames, Iowa.
-Further to this to app aims to predict the sale price of the four homes the client has inherited in Ames, Iowa
+The heritage housing sale price predictor is an app / dashboard to predict the sale price of houses in Ames, Iowa.
+Further to this to app / dashboard aims to predict the sale price of the four homes the client has inherited in Ames, Iowa
 
 Visit the deployed site here: [Heritage Housing](https://heritage-housing-739de1000c22.herokuapp.com/)
 
@@ -134,8 +134,8 @@ Although your friend has an excellent understanding of property prices in her ow
     * As a client I want to have a simple interface so I can quickly find the predicted value of a property
     * As a client I want to be able to see the individual predicted prices of my 4 inherited properties, as well as the summed price, so I can easily access this information 
 * Epic 5 - Dashboard deployment and release
-    * As a data analyst I was my app to be deployed so that my client can easily access this
-    * As I client I want to be able to access the deployed app so I can run the predictions for the houses I would like to know the predicted price/s of
+    * As a data analyst I was my dashboard to be deployed so that my client can easily access this
+    * As I client I want to be able to access the deployed dashboard so I can run the predictions for the houses I would like to know the predicted price/s of
 
 # Dashboard Design
 
@@ -293,20 +293,19 @@ The technologies used for this project were:
 * Heroku - To deploy the project
 * Jupyter Notebooks - Contains the code to explore, clean, feature engineer and model the data 
 * Kaggle - The dataset was downloaded from Kaggle
-* Streamlit - Delivers the data app
+* Streamlit - Delivers the data app / dashboard
 
 ## Libraries Used
 
-* feature-engine==1.0.2 - 
-* matplotlib==3.3.1
-* numpy==1.18.5
-* pandas==1.4.2
-* pingouin==0.3.12
-* plotly==4.12.0
-* scikit-learn==0.24.2
-* seaborn==0.11.0
-* xgboost==1.2.1
-* ydata-profiling==4.4.0
+* feature-engine==1.0.2 - compare transformers to engineer and select the features to be used in the ML model
+* matplotlib==3.3.1 - to create plots to visualise the data
+* numpy==1.18.5 - to create an array of zeros in the heatmap function and also used in the mathematical functions
+* pandas==1.4.2 - to read the csv files, convert these to dataframes and to manipulate the data
+* pingouin==0.3.12 - to check for normality in the data
+* plotly==4.12.0 - to create plots to visualise the data
+* scikit-learn==0.24.2 - to create the pipeline, split the data into test and train sets and evaluate these
+* seaborn==0.11.0 - a high-level interface for drawing attractive statistical graphics
+* ydata-profiling==4.4.0 - used to run a profiling report to evaluation the distributions
 
 # Testing
 
@@ -425,8 +424,8 @@ As a client I want to be able to see the individual predicted prices of my 4 inh
 
 **User Story**|**How This Has Been Met**
 :-----:|:-----:
-As a data analyst I was my app to be deployed so that my client can easily access this|The app has been deployed through Heroku
-As I client I want to be able to access the deployed app so I can run the predictions for the houses I would like to know the predicted price/s of|The client is able to access the app using the Heroku link shown in this ReadMe
+As a data analyst I want my dashboard to be deployed so that my client can easily access this|The dashboard has been deployed through Heroku
+As I client I want to be able to access the deployed dashboard so I can run the predictions for the houses I would like to know the predicted price/s of|The client is able to access the dashboard using the Heroku link shown in this ReadMe
 
 # Credits 
 
