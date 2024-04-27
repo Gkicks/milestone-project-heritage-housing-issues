@@ -237,6 +237,7 @@
     ![Pipeline Section Screenshot](static/images/pipeline.png)
     ![Feature Importance Section Screenshot](static/images/features-importance.png)
     ![Pipline Performance Screenshot](static/images/pipeline-performance.png)
+    ![Pipline Performance Plots Screenshot](static/images/pipeline-performance-plots.png)
 
     </details>
 
