@@ -92,7 +92,7 @@ def plot_scatter(df, col, target_var):
     for col in df.drop([target_var], axis=1).columns.to_list():
         fig, axes = plt.subplots(figsize=(8, 5))
         sns.regplot(data=df, x=col, y=target_var, scatter_kws={
-            "color": "blue"}, line_kws={"color": "red"})
+            "color": "purple"}, line_kws={"color": "red"})
         plt.title(f"{col}", fontsize=20, y=1.1)
         st.pyplot(fig)
 
@@ -106,7 +106,7 @@ def heatmap_corr(df, threshold, figsize, font_annot):
 
         fig, axes = plt.subplots(figsize=figsize)
         sns.heatmap(df, annot=True, xticklabels=True, yticklabels=True,
-                    mask=mask, cmap='viridis', annot_kws={
+                    mask=mask, cmap='plasma', annot_kws={
                         "size": font_annot}, ax=axes,
                     linewidth=0.5
                     )
