@@ -405,7 +405,7 @@ As a data analyst I want to source a dataset of accurate data so that I have hig
 :-----:|:-----:
 As a data analysist I want to clean the dataset used so there are fewer errors and the predictions I make are more accurate|Two of the variables were dropped due to having a high percentage of missing values - EnclosedPorch (90.7%) and WoodDeckSF (89.4%). Decisions were based on the values to input for the other missing data following analysis
 As a client I want to see graphs to show which variables have the most impact on sale price|The user can see scattergraphs showing sale price plotted against each of the most correlated variable. These are shown when the user clicks the Sale Price Level per Variable in the House Sale Price Study page
-AS a client I want to see heatmaps to show which variables are most correlated with sale price|Both Pearson and Spearman correlations were run. Heatmaps for each of these are displayed on the dashboard when the user clicks the relevant checkbox
+As a client I want to see heatmaps to show which variables are most correlated with sale price|Both Pearson and Spearman correlations were run. Heatmaps for each of these are displayed on the dashboard when the user clicks the relevant checkbox. In the Jupyter notebooks PPS analysis was also carried out but, the PPS heatmap showed that none of the variables had strong predictive power for sale price so, this wasn't included in the dashboard
 
 ### Epic 3 - Model training, optimization and validation
 
