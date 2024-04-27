@@ -29,7 +29,7 @@ def page_ml_predict_house_price_body():
     st.write("### ML Pipeline: Predict Sales Price")
     # display pipeline training summary conclusions
     st.info(
-        f"* The aim of the pipline was to achieve an R2 score of at 0.75 "
+        f"* The aim of the pipeline was to achieve an R2 score of at 0.75 "
         f"on the train set as well as on the test set\n"
         f"* The pipeline performance on train and test set is 0.98 and 0.83, "
         f"respectively\n"
