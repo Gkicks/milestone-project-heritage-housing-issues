@@ -1,7 +1,7 @@
 # Heritage Housing Sale Price Predictor
 
 The heritage housing sale price predictor is an app / dashboard to predict the sale price of houses in Ames, Iowa.
-Further to this to app / dashboard aims to predict the sale price of the four homes the client has inherited in Ames, Iowa
+Further to this the app / dashboard aims to predict the sale price of the four homes the client has inherited in Ames, Iowa
 
 Visit the deployed site here: [Heritage Housing](https://heritage-housing-739de1000c22.herokuapp.com/)
 
@@ -50,7 +50,7 @@ Visit the deployed site here: [Heritage Housing](https://heritage-housing-739de1
 
 # Dataset Content  
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+* The dataset has 1460 rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -104,7 +104,7 @@ Although your friend has an excellent understanding of property prices in her ow
     * The data used will be downloaded from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data) 
     * I will use conventional data analysis used to investigate how house attributes are correlated with the sale prices
     * Correlation and PPS study to be completed - Spearman, Pearson and Predictive Power Score (PPS). There will be a visual representation of these using heatmaps
-    * A scatterplot to be used to visulise the impact of the most correlated variables agains sale price
+    * A scatterplot to be used to visulise the impact of the most correlated variables against sale price
 * Business requirement 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
     * The data suggests a regressor where the target is the sale price
     * I will use feature engineering to compare transfomations 
@@ -134,7 +134,7 @@ Although your friend has an excellent understanding of property prices in her ow
     * As a client I want to have a simple interface so I can quickly find the predicted value of a property
     * As a client I want to be able to see the individual predicted prices of my 4 inherited properties, as well as the summed price, so I can easily access this information 
 * Epic 5 - Dashboard deployment and release
-    * As a data analyst I was my dashboard to be deployed so that my client can easily access this
+    * As a data analyst I want my dashboard to be deployed so that my client can easily access this
     * As I client I want to be able to access the deployed dashboard so I can run the predictions for the houses I would like to know the predicted price/s of
 
 # Dashboard Design
@@ -179,11 +179,11 @@ Although your friend has an excellent understanding of property prices in her ow
 * Gives details of each of the variables shown and how to complete these
 * Has 5 input sections where the client can enter the details, of the property, they would like to see the predicted price of
     * Above Grade/Ground Living Area:
-        * The value must be greater than equal to zero. Although the minimum area in the dataset is 334 I chose to allow the user to input numbers greater or equal to zero as there could be the case of there being very little or no property above ground
+        * The value must be greater than or equal to zero. Although the minimum area in the dataset is 334 I chose to allow the user to input numbers greater or equal to zero as there could be the case of there being very little or no property above ground
         * The maximum value is set to 11,284 which is double the maximum of the highest value in the dataset
         * The default value is the median of the dataset values
     * Overall Quality:
-        * The user can input an integer from 1 to 10, with 1 being 'very poor' and 5 being 'very excellent'
+        * The user can input an integer from 1 to 10, with 1 being 'very poor' and 10 being 'very excellent'
         * The default value is the median of the dataset values
     * Kitchen Quality:
         * The user can input an integer from 1 to 5, with 1 being 'poor' and 5 being 'excellent'
@@ -215,7 +215,7 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## Page 4 - Project Hypothesis and Valdation
 
-* Details the initial hypothesis that were made and the consulsion to these based on the analysis
+* Details the initial hypothesis that were made and the conclusion to these based on the analysis
 
 <details>
 <summary>Project Hypothesis and Validation Page Screenshots</summary>
@@ -226,9 +226,9 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## Page 5 - ML Predict House Price
 
-* Evalutes the ML pipline used
+* Evalutes the ML pipeline used
 * Details the pipeline used
-* Shows the features the model was trained on and there importance. This is shown as both a list and a bar chart
+* Shows the features the model was trained on and their importance. This is shown as both a list and a bar chart
 * Shows the pipeline performance
 
 <details>
