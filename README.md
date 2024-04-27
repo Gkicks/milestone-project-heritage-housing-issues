@@ -277,7 +277,7 @@ The technologies used for this project were:
 
 ## PEP8 Validation
 
-I ran my code, for all python files, through the PEP8 validator. There were some formatting errors raised:
+I ran my code, for all python files, through the PEP8 validator. I used the  pycodestyle package to validate the code written in the Jupyter notebooks. There were some formatting errors raised:
 
 * E501 line too long (87 > 79 characters)
 * E231 missing whitespace after '
