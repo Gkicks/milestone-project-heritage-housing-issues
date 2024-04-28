@@ -31,10 +31,10 @@ def page_predict_house_price_body():
     st.warning(
         f"* Above Ground Area, Total Basement Area and Garage Area are all "
         f"measured in square feet\n"
-        f"* Overall Quality is measured from 1-10, with 1 being 'very poor' "
-        f"to 10 being 'very excellent\n"
         f"* Kitchen Quality is measured from 1-5, with 1 being 'poor' "
         f"to 5 being 'excellent'\n"
+        f"* Overall Quality is measured from 1-10, with 1 being 'very poor' "
+        f"to 10 being 'very excellent\n"
         f"* Use the + and - buttons to increase / decrease the numbers or "
         f"type over the number shown\n"
         f"* Press 'Run Predictive Analysis' to show the predicted house price "
@@ -95,21 +95,21 @@ def DrawInputsWidgets():
 
     # From here on we draw the widget and set initial values
     with col1:
-        feature = "GrLivArea"
+        feature = "GarageArea"
         st_widget = st.number_input(
-            label="Above Ground Living Area",
+            label="Garage Area",
             min_value=0,
-            max_value=11284,
+            max_value=2836,
             value=int(df[feature].median())
         )
     X_live[feature] = st_widget
 
     with col2:
-        feature = "OverallQual"
+        feature = "GrLivArea"
         st_widget = st.number_input(
-            label="Overall Quality",
-            min_value=1,
-            max_value=10,
+            label="Above Ground Living Area",
+            min_value=0,
+            max_value=11284,
             value=int(df[feature].median())
         )
     X_live[feature] = st_widget
@@ -125,21 +125,21 @@ def DrawInputsWidgets():
     X_live[feature] = st_widget
 
     with col4:
-        feature = "TotalBsmtSF"
+        feature = "OverallQual"
         st_widget = st.number_input(
-            label="Total Basement Area",
-            min_value=0,
-            max_value=12220,
+            label="Overall Quality",
+            min_value=1,
+            max_value=10,
             value=int(df[feature].median())
         )
     X_live[feature] = st_widget
 
     with col5:
-        feature = "GarageArea"
+        feature = "TotalBsmtSF"
         st_widget = st.number_input(
-            label="Garage Area",
+            label="Total Basement Area",
             min_value=0,
-            max_value=2836,
+            max_value=12220,
             value=int(df[feature].median())
         )
     X_live[feature] = st_widget
