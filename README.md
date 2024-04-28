@@ -430,6 +430,7 @@ As I client I want to be able to access the deployed dashboard so I can run the 
 # Credits 
 
 * The code was based on the Code Institute Walkthough 2 - Churnometer project and adapted to fit the business requirements and data for this project
+* Code from https://stackoverflow.com/questions/75984050/pandas-treat-none-value-as-nan-in-one-column-and-as-none-in-other-column was usedto prevent ‘None’ values being treated as NAN. This is used in Jupyter notebooks 2 - Data Exploration and 3 - Data Cleaning
 * I used the following websites to help with this project:
     * https://pandas.pydata.org
     * https://stackoverflow.com
