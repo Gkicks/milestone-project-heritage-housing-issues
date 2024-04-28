@@ -6,9 +6,10 @@ from src.machine_learning.evaluate import performance, evaluation
 
 
 def page_ml_predict_house_price_body():
+    """ Page 5 of Streamlit Dashboard - ML - Predict House Price """
 
+    # Load needed files
     version = 'v1'
-    # load needed files
     sale_price_pipe_model = load_pkl_file(
         f'outputs/ml_pipeline/predict_sale_price/{version}/pipeline.pkl')
     sale_price_feat_importance = plt.imread(
@@ -27,7 +28,8 @@ def page_ml_predict_house_price_body():
         f"outputs/ml_pipeline/predict_sale_price/{version}/y_test.csv").values
 
     st.write("### ML Pipeline: Predict Sales Price")
-    # display pipeline training summary conclusions
+
+    # Display pipeline training summary conclusions
     st.info(
         f"* The aim of the pipeline was to achieve an R2 score of at 0.75 "
         f"on the train set as well as on the test set\n"
@@ -38,23 +40,24 @@ def page_ml_predict_house_price_body():
         f"nor underfitting."
     )
 
-    # show pipelines
+    # Show pipeline
     st.write("---")
-
     st.write("* The pipeline that was used in this project:")
     st.write(sale_price_pipe_model)
 
-    # show feature importance plot
+    # Show feature importance plot
     st.write("---")
     st.write("### Feature Importance Plot")
     st.write("* The features the model was trained and their importance.")
     st.write(X_train.columns.to_list())
     st.image(sale_price_feat_importance)
 
-    # evaluate performance on train and test set
+    # Evaluate performance on train and test set
     st.write("---")
     st.write("### Pipeline Performance")
     performance(X_train, y_train, X_test, y_test, sale_price_pipe_model)
     st.text("")
+
+    # Show pipeline performance plot
     st.write("### Pipeline Performance Plots")
     st.image(evaluation_plots)

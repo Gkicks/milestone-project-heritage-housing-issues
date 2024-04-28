@@ -2,9 +2,11 @@ import streamlit as st
 
 
 def page_project_hypothesis_body():
+    """ Page 4 of Streamlit Dashboard - Project Hypothesis and Validation """
 
     st.write("### Project Hypothesis and Validation")
 
+    # Copied from README - "Hypothesis and how to validate?" section
     st.success(
         f"* We suspect that quality will have an impact on house price, "
         f"with houses that have higher quality features fetching a higher "

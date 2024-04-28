@@ -7,6 +7,7 @@ from src.machine_learning.predictive_analysis_ui import (
 
 
 def page_predict_house_price_body():
+    """ Page 3 of Streamlit Dashboard - Predict House Price """
 
     # load predict sale price files
     version = 'v1'
@@ -44,7 +45,7 @@ def page_predict_house_price_body():
     # Generate Live Data
     X_live = DrawInputsWidgets()
 
-    # predict on live data
+    # Predict on live data
     st.text("")
     if st.button("Run Predictive Analysis"):
         sale_price_prediction = predict_sale_price_single(
@@ -52,13 +53,13 @@ def page_predict_house_price_body():
 
     st.write("---")
 
-    # section for showing the inherited houses price prediction
+    # Section for showing the inherited houses price prediction
     st.write("## Sale Price Prediction Interface - Inherited Houses")
     st.text("")
 
     inherited_df = load_inherited_housing_data()
 
-    # display inherited houses data
+    # Display inherited houses data
     if st.checkbox("Inspect Inherited Housing Data"):
         st.write(
             f"* The dataset has {inherited_df.shape[0]} rows and "
@@ -69,7 +70,7 @@ def page_predict_house_price_body():
 
     st.text("")
 
-    # predict inherited houses data
+    # Predict inherited houses data
     if st.button("Run Predictive Analysis on Inherited Houses"):
         st.write(
             sale_price_prediction=predict_sale_price_inherited(
@@ -78,18 +79,21 @@ def page_predict_house_price_body():
 
 
 def DrawInputsWidgets():
+    """
+    Creates the inputs for user to input values of most important variables
+    """
 
-    # load dataset
+    # Load dataset
     df = load_housing_data()
 
-    # we create input widgets only for 5 features
+    # We create input widgets only for 5 features
     col1, col2, col3 = st.beta_columns(3)
     col4, col5, col6 = st.beta_columns(3)
 
-    # create an empty DataFrame, which will be the live data
+    # Create an empty DataFrame, which will be the live data
     X_live = pd.DataFrame([], index=[0])
 
-    # from here on we draw the widget and set initial values
+    # From here on we draw the widget and set initial values
     with col1:
         feature = "GrLivArea"
         st_widget = st.number_input(
